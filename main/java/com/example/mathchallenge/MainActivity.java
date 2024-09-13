@@ -33,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
         btnChallenge = findViewById(R.id.button3);
         btnCheck = findViewById(R.id.button4);
 
-        // Set onClick listeners for the buttons
         btnMultiplicationTable.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,7 +62,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    // Method to generate random numbers in a given range
     private void generateRandomNumbers(int min, int max) {
         Random random = new Random();
         num1 = random.nextInt((max - min) + 1) + min;
@@ -73,7 +71,6 @@ public class MainActivity extends AppCompatActivity {
         textViewNum2.setText(String.valueOf(num2));
     }
 
-    // Method to check the user's answer
     private void checkAnswer() {
         String userAnswerStr = editTextAnswer.getText().toString();
         if (!userAnswerStr.isEmpty()) {
@@ -89,7 +86,6 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Incorrect. The correct answer is " + correctAnswer, Toast.LENGTH_SHORT).show();
             }
 
-            // Clear the input field for the next attempt
             editTextAnswer.setText("");
         } else {
             Toast.makeText(this, "Please enter your answer.", Toast.LENGTH_SHORT).show();
